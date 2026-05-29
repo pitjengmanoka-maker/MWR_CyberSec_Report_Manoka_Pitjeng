@@ -3,7 +3,7 @@
 
 **Assessor:** Manoka Pitjeng  
 **TryHackMe Username:** pitjengmanoka  
-**Date of Assessment:** 26 May 2026  
+**Date of Assessment:** 28 May 2026  
 **Report Version:** 1.0  
 
 ---
@@ -85,7 +85,7 @@ Only two unique flags were confirmed during testing. Other issues were still doc
 **Flag:** N/A
 
 **Description:**
-The application allowed a new user account to be created using a common weak password such as password. This shows that the registration process does not appear to block commonly used passwords or enforce strong password requirements.
+The application allowed a new user account to be created using a common weak password such as 12345678. This shows that the registration process does not appear to block commonly used passwords or enforce strong password requirements.
 
 **Reproduction Steps:**
 1. Sent a registration request to /api/v1/auth/register.
@@ -277,6 +277,6 @@ Refresh tokens should be protected using secure storage methods. A safer option 
 
 ## Conclusion
 
-The most important issue found was the JWT authentication bypass, because it allowed admin functionality to be accessed using a modified unsigned token. The duplicate registration data leak was also serious because it exposed sensitive user data, including a password hash.
+The most important issue found was the JWT authentication bypass, because it allowed admin functionality to be accessed using a modified unsigned token. The duplicate registration data leak was also serious because it exposed sensitive user data, including a password hash. I was also able to register using a weak password such as 12345678 which meant that the web server's password policy needs to be changed. 
 
 The application should prioritise fixing JWT validation, reducing sensitive information in API responses, and improving upload validation. The lower-risk issues, such as server header disclosure and refresh token storage, should also be reviewed as part of improving the overall security posture of the application.
