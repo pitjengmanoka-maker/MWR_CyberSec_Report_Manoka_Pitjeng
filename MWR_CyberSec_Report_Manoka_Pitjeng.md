@@ -38,19 +38,19 @@ I then tested the application using browser developer tools, Burp Suite, curl, S
 
 **Figure 1: Exam setup completed**
 
-<img width="1120" height="477" alt="exam_setup_redacted" src="https://github.com/user-attachments/assets/5ad1f988-72f3-463d-abc6-616782a2fac4" />
+<img width="1120" height="477" alt="exam_setup_redacted" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/exam_setup_redacted.png" />
 
 **Figure 2: Website login page**
 
-<img width="1117" height="477" alt="website_open" src="https://github.com/user-attachments/assets/661342f1-a595-4179-9cab-16fcab165873" />
+<img width="1117" height="477" alt="website_open" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/website_open.png" />
 
 **Figure 3: Burp Suite HTTP history**
 
-<img width="1167" height="476" alt="burp_suit_day1_httpHistory" src="https://github.com/user-attachments/assets/98de15c5-16bf-441d-b322-54246c1b00a4" />
+<img width="1167" height="476" alt="burp_suit_day1_httpHistory" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/burp_suit_day1_httpHistory.png" />
 
 **Figure 4: Registration successful response**
 
-<img width="1114" height="476" alt="day2_registration_success_response_redacted" src="https://github.com/user-attachments/assets/3dd8888b-c794-4627-b090-0b7d21f4a370" />
+<img width="1114" height="476" alt="day2_registration_success_response_redacted" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/exam_setup_redacted.png" />
 
 ---
 
@@ -97,8 +97,14 @@ The application allowed a new user account to be created using a common weak pas
 Users may create passwords that are easy to guess. This can increase the chance of account compromise, especially if attackers attempt password guessing or credential stuffing.
 
 **Screenshot References:**
-- weak_password_registration_success.png
-- weak_password_login_success.png
+- weak_password_registration
+  
+  <img width="816" height="195" alt="weak_password_registration" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/weak_password_registration.png" />
+  
+- weak_password_login
+
+  <img width="816" height="195" alt="login_weak_password" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/login_weak_password.png" />  
+  
 
 **Remediation:**
 The application should enforce stronger password rules. It should block common passwords, require a reasonable minimum length, and use rate limiting or account lockout to reduce password guessing attempts.
@@ -125,7 +131,7 @@ An attacker could bypass normal access control and access admin functionality wi
 
 **Screenshot References:**
 
-<img width="816" height="195" alt="finding_02_jwt_none_admin_export_flag" src="https://github.com/user-attachments/assets/bc35c05c-9f6f-49e4-8e52-ec8c2b3d39a3" />
+<img width="816" height="195" alt="finding_02_jwt_none_admin_export_flag" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/finding_02_jwt_none_admin_export_flag.png" />
 
 
 **Remediation:**
@@ -153,7 +159,7 @@ A user could access sensitive assignment information earlier than intended. If s
 
 **Screenshot References:**
 
-<img width="768" height="295" alt="finding_01_assignment_start_flag_response_redacted" src="https://github.com/user-attachments/assets/3b1ccb27-3e7a-4d90-8fa0-84ef0d0650fb" />
+<img width="768" height="295" alt="finding_01_assignment_start_flag_response_redacted" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/finding_01_assignment_start_flag_response_redacted.png" />
 
 **Remediation:**
 The application should not return sensitive values such as flags or internal challenge data in normal start responses. The backend should only return information needed by the frontend, and sensitive values should be protected behind the correct validation logic.
@@ -181,7 +187,7 @@ Leaking password hashes is a serious security risk because an attacker can try t
 
 **Screenshot References:**
 
-<img width="1912" height="256" alt="finding_sensitive_user_data_leak_duplicate_register" src="https://github.com/user-attachments/assets/f930a2e4-464d-46e9-afab-7067b2f93c05" />
+<img width="1912" height="256" alt="finding_sensitive_user_data_leak_duplicate_register" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/finding_sensitive_user_data_leak_duplicate_register_redacted.png" />
 
 **Remediation:**
 The registration endpoint should return a generic error message such as `Email already registered`. It should not return the full user object or sensitive fields. Password hashes, roles, IDs, and application status values should never be included in public API error responses.
@@ -208,7 +214,7 @@ If file uploads are not properly restricted, an attacker may be able to upload u
 
 **Screenshot References:**
 
-<img width="417" height="227" alt="finding_cv_upload_non_pdf_accepted" src="https://github.com/user-attachments/assets/81c99855-9d60-4201-bc27-7047089ce8d1" />
+<img width="417" height="227" alt="finding_cv_upload_non_pdf_accepted" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/finding_cv_upload_non_pdf_accepted.png" />
 
 
 **Remediation:**
@@ -235,7 +241,7 @@ Server version information can help an attacker understand the technology stack 
 
 **Screenshot References:**
 
-<img width="867" height="376" alt="home_response_headers" src="https://github.com/user-attachments/assets/293e5803-a726-4f21-b077-2dc87c9bc018" />
+<img width="867" height="376" alt="home_response_headers" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/home_response_headers.png" />
 
 **Remediation:**
 The server should hide detailed version information where possible. Security headers such as Content Security Policy, X-Frame-Options or frame-ancestors, X-Content-Type-Options, Referrer-Policy, and Permissions-Policy should be reviewed and added where suitable.
@@ -262,7 +268,7 @@ The application stored the refresh token in browser local storage. I observed th
 If an attacker finds a way to run JavaScript in the user's browser, the stored refresh token could be stolen and used to maintain access. This increases the risk of account takeover in combination with another client-side vulnerability.
 
 **Screenshot References:**
-<img width="1905" height="882" alt="day2_localstorage_refresh_token_observed" src="https://github.com/user-attachments/assets/53761fc1-c422-4a0a-abc7-04144206bfe1" />
+<img width="1905" height="882" alt="day2_localstorage_refresh_token_observed" src="https://github.com/pitjengmanoka-maker/MWR_CyberSec_Report_Manoka_Pitjeng/blob/main/screenshots/day2_localstorage_refresh_token_observed_redacted.png" />
 
 **Remediation:**
 Refresh tokens should be protected using secure storage methods. A safer option is to store refresh tokens in secure, HttpOnly, SameSite cookies so JavaScript cannot directly access them. Tokens should also have proper expiry, rotation, and revocation controls.
